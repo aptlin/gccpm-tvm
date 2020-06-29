@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "gccpm-tvm"
+version = "0.1.0"
+description = "Global Context for Convolutional Pose Machines in TVM"
+authors = ["Sasha Illarionov <sasha@sdll.io>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6.1"
+torch = "^1.5.0"
+opencv-python = "^4.2.0"
+numpy = "^1.19.0"
+torchvision = "^0.6.1"
+matplotlib = "^3.2.2"
+tqdm = "^4.46.1"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

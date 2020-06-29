@@ -1,0 +1,23 @@
+version: "3"
+services:
+  gccpm-cpu:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.cpu
+    container_name: "posenet_cpu"
+    ports:
+      - 8888:8888
+    networks:
+      - gccpm-network
+    command: jupyter lab --ip 0.0.0.0 --no-browser --allow-root
+    environment:
+      TVM_NUM_THREADS: 1
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+    volumes:
+      - .:/app
+
+networks:
+  gccpm-network:
